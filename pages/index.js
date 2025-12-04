@@ -5,6 +5,7 @@ import CardFilmes from '../components/CardFilmes'
 
 
 
+
 function Home (){
     const estilolistacard = {
       display:"grid",
@@ -13,17 +14,19 @@ function Home (){
       listStyle: 'none',
       
     }
- 
+  
     const urlVamosChamar =
     `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}&language=pt-BR&page=1`;
     
     let resposta = null;
 
     fetch(urlVamosChamar).then((res) => {
-      resposta =  res;
+      resposta  =  res;
+
+      console.log(res.jsonestuda)
     });
    
-    console.log(resposta)
+    
 
   return<> 
     <h1>FILMES</h1>
